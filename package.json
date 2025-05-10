@@ -1,7 +1,7 @@
 {
   "name": "magic-bonfire",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -10,12 +10,21 @@
   },
   "dependencies": {
     "expo": "~53.0.9",
+    "expo-module-scripts": "^4.1.7",
+    "expo-sensors": "^14.1.4",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@tsconfig/react-native": "^3.0.5",
+    "@types/jest": "^29.5.14",
+    "@types/react": "~19.0.10",
+    "@types/react-test-renderer": "^19.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.3"
   },
   "private": true
 }
