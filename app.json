@@ -23,6 +23,11 @@
       },
       "edgeToEdgeEnabled": true,
       "package": "com.ffauna.magicbonfire"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ef93cafb-c3be-4d17-83e3-98cbc9ae2a2c"
+      }
     }
   }
 }
