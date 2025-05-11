@@ -59,5 +59,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 25,
   },
-  text: { color: "#fff", fontSize: 24, fontWeight: "bold" },
+  text: {
+    color: "#fff",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
