@@ -7,21 +7,22 @@
     "owner": "ffauna",
     "icon": "./assets/magic-bonfire-icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/magic-bonfire-splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ffauna.magicbonfire"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/magic-bonfire-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.ffauna.magicbonfire"
     }
   }
 }

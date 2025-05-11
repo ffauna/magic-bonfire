@@ -1,13 +1,37 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import {
+  Animated,
+  Image,
+  StyleSheet,
+  Text,
+  useAnimatedValue,
+  View,
+} from "react-native";
 import { useShaking } from "@hooks/useShaking";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getDarkSoulsMessage } from "./utils/darkSoulsMessageGenerator";
+import * as NavigationBar from "expo-navigation-bar";
 
 export default function App() {
+  const fadeAnim = useAnimatedValue(1);
   const [message, setMessage] = useState("Agita para generar un mensaje");
   const { isShaking } = useShaking(() => {
-    setMessage(getDarkSoulsMessage());
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start(() => {
+      setMessage(getDarkSoulsMessage());
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 1000,
+        useNativeDriver: true,
+      }).start();
+    });
+  });
+
+  useEffect(() => {
+    NavigationBar.setVisibilityAsync("hidden");
   });
 
   return (
@@ -19,7 +43,9 @@ export default function App() {
           alt="Background Bonfire"
         />
       </View>
-      <Text style={styles.text}>{message}</Text>
+      <Animated.View style={{ opacity: fadeAnim }}>
+        <Text style={styles.text}>{message}</Text>
+      </Animated.View>
       <StatusBar style="auto" />
     </View>
   );

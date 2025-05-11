@@ -21,7 +21,7 @@ export function useShaking(
       if (!acceleration) return;
 
       const { x, y, z } = acceleration;
-      const threshold = 5;
+      const threshold = 3.5;
 
       const shakeDetected =
         Math.abs(x) > threshold ||
