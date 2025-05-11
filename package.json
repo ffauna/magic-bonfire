@@ -28,5 +28,12 @@
     "ts-node": "^10.9.2",
     "typescript": "~5.8.3"
   },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "listUnknownPackages": false
+      }
+    }
+  },
   "private": true
 }
